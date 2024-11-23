@@ -6,7 +6,7 @@
 - [x] Write a Python script capable to travel through a directory tree
 - [x] Write your own example using Python Threading module
 - [x] Make use of Python signal handlers to handle SIGINT
-- [ ] Create a Pythonic file downloader
+- [x] Create a Pythonic file downloader
 - [ ] Create FTP site parser
 - [ ] Create TCP SYN network port scanner
 - [ ] Create a distributed password cracker in Python with MPI
