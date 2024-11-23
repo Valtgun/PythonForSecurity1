@@ -1,3 +1,9 @@
 # PythonForSecurity1
 
-Uzdevumi
+[x] Read and parse log file
+
+
+
+
+
+
