@@ -1,19 +1,12 @@
-## PythonForSecurity1
+# PythonForSecurity1
 
-# Uzdevumi:
+## Uzdevumi:
 
-[x] Read and parse log file
-
-[x] Write a Python script capable to travel through a directory tree
-
-[ ] Write your own example using Python Threading module
-
-[ ] Make use of Python signal handlers to handle SIGINT
-
-[ ] Create a Pythonic file downloader
-
-[ ] Create FTP site parser
-
-[ ] Create TCP SYN network port scanner
-
-[ ] Create a distributed password cracker in Python with MPI
+- [x] Read and parse log file
+- [x] Write a Python script capable to travel through a directory tree
+- [ ] Write your own example using Python Threading module
+- [ ] Make use of Python signal handlers to handle SIGINT
+- [ ] Create a Pythonic file downloader
+- [ ] Create FTP site parser
+- [ ] Create TCP SYN network port scanner
+- [ ] Create a distributed password cracker in Python with MPI
