@@ -1,9 +1,18 @@
-# Create TCP SYN network port scanner
+# MPI
 
-TODO:
-- description
-- mpiexec newer version does not support hostfile, need to check
-- mpiexec documentation to be found
+mpiexec jaunākajām versijām ir cita sintakse
+- Uzstādam https://www.microsoft.com/en-us/download/details.aspx?id=105289
+- uz katra no datoriem palaižam smpd -d 0 vai smpd -d 2 ja vēlamies redzēt debug tekstus
+- uz galvenā datora palaižam: mpiexec -hosts 1 localhost python f-DistributedMPI.py
+- -hosts 1, uz cik datoriem palaidīsim paralēlo procesu
+- nākamie aiz -hosts x ir hostname
+- sosts failā abos datoros jāieliek abi ip/hostname
+- pēc tam palaižamais process, piemēram:
+- mpiexec -hosts 2 DESKTOP-60JQQA4 hostB python f-DistributedMPI.py
+
+- Izskatās ka mpiexec strādā izmantojot AD kerberos autentifikāciju, nav iespējams palaist lokālā tīklā
+
+
 
 
 python f-DistributedMPI 
