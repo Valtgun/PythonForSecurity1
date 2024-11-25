@@ -11,11 +11,10 @@ mpiexec jaunākajām versijām ir cita sintakse
 - mpiexec -hosts 2 DESKTOP-60JQQA4 hostB python f-DistributedMPI.py
 
 - Izskatās ka mpiexec strādā izmantojot AD kerberos autentifikāciju, nav iespējams palaist lokālā tīklā
+Šo neizdevās novērst.
 
-
-
-
-python f-DistributedMPI 
+Kā alternatīvas tika apskatītas citas MPI implementācijas, bet tās nestrādā uz Windows.
+Skaidra ir mērogošanas pieeja, bet šim risinājumam ir nepieciešama atbilstoša, sagatavota infrastruktūra.
 
 
 Piemērs: python f-DistributedMPI
@@ -38,11 +37,6 @@ Laiks: 54.86 sek, 6 procesi.
 
 ```
 mpiexec -hostfile hostfile.txt -n 18 python f-DistributedMPI.py
-
-
-
 ```
-![xPC xCPU](./images/pc1proc6.png)
-
-
-
+Windows OS, mpiexec nestrādā, ja datori nav vienā domain.
+OpenMPI, u.c. implementācijas, pamatā darbojas uz Linux, MacOS sistēmām. Šobrīd nav pieejamas vairākas šādas sistēmas, līdz ar to vairāku datoru testi nevar tikt veikti.
