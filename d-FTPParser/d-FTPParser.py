@@ -5,6 +5,7 @@ import threading
 import queue
 #from googlesearch import search
 from urllib.parse import urlparse
+import google.generativeai as genai
 
 # def ftp_file_check(file, sites=20):
 # -----------------------------------------------
@@ -29,6 +30,21 @@ from urllib.parse import urlparse
 #                     file.write(domain + "\n")
 #                     ftp_sites.append(domain)
 #     return ftp_sites
+def ftp_file_check_gemini(file, sites=20):
+    fileContent = open(file, "a+")
+    fileContent.seek(0)
+    ftp_sites = [line.strip() for line in fileContent.readlines()]
+    if len(ftp_sites)<sites:
+        requestSites = sites - len(ftp_sites)
+        genai.configure(api_key=os.environ["API_KEY"])
+        #print (os.environ["API_KEY"])
+        model = genai.GenerativeModel("gemini-1.5-flash")
+        #print (ftp_sites)
+        print(f"I need to have additional {requestSites} FTP sites, that are not listed in the following list: {ftp_sites}. Please provide them without leading ftp:// and give them in format that has each FTP separated with newline character")
+        response = model.generate_content(f"I need to have additional {requestSites} FTP sites, that are not listed in the following list: {ftp_sites}. Please provide them without leading ftp:// and give them in format that has each FTP separated with newline character")
+        print(response.text)
+        fileContent.write(response.text)  
+    fileContent.close()
 
 # Worker thread klase
 class WorkerThread(threading.Thread):
@@ -83,5 +99,5 @@ if __name__ == "__main__":
     parser.add_argument("--sites", nargs='?', const=20, default=20, help="Cik FTP saitus apmeklēt")
     parser.add_argument("--numFiles", nargs='?', const=3, default=3, help="Cik failus katrā FTP saitā sameklēt")
     args = parser.parse_args()
-    #ftp_sites = ftp_file_check(args.file, args.sites)
+    ftp_sites = ftp_file_check_gemini(args.file, int(args.sites))
     ftp_getter(args.file, int(args.threads), int(args.numFiles))
