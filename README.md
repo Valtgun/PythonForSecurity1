@@ -9,4 +9,4 @@
 - [x] Create a Pythonic file downloader
 - [x] Create FTP site parser
 - [x] Create TCP SYN network port scanner
-- [ ] Create a distributed password cracker in Python with MPI
+- [x] Create a distributed password cracker in Python with MPI
