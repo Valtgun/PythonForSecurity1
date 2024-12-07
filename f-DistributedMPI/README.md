@@ -83,4 +83,5 @@ Laiks: 103.38 sek, 4 procesi.
 ```
 
 
-P.S.: Darbs tika veikts savā AWS kontā, jo iespējams pietrūka konfigurācija, ka visas instances atrodas vienā Subnet un starp instancēm nestrādāja, t.sk ping izmantojot iekšējās IP.
+P.S.: Darbs tika veikts savā AWS kontā, jo iespējams pietrūka konfigurācija, ka visas instances atrodas vienā Subnet un starp instancēm nestrādāja, izmantojot iekšējās IP.
+Pārbaudīt, ka strādā, tad var: mpirun --hostfile hostfile.txt -np 4 hostname
